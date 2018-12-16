@@ -58,7 +58,8 @@ vm.swappiness = 0
 " >> /etc/sysctl.conf
 
 source util.sh
-formatDataDisk
+formatDataDisk datadisk
+formatDataDisk indexdisk
 
 yum -y update
 yum -y install jq
