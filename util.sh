@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-formatDisk ()
+formatDataDisk ()
 {
   DEVICE=/dev/sdk
-  MOUNTPOINT=/mnt/$1
+  MOUNTPOINT=/mnt/datadisk
 
   echo "Creating the filesystem."
   mkfs -t ext4 ${DEVICE}

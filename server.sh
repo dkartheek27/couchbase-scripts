@@ -58,8 +58,7 @@ vm.swappiness = 0
 " >> /etc/sysctl.conf
 
 source util.sh
-formatDisk datadisk
-formatDisk indexdisk
+formatDataDisk
 
 yum -y update
 yum -y install jq
@@ -117,8 +116,8 @@ do
   output=`./couchbase-cli node-init \
     --cluster=$nodePublicDNS \
     --node-init-hostname=$nodePublicDNS \
-    --node-init-data-path=/mnt/datadisk/ \
-    --node-init-index-path=/mnt/indexdisk/ \
+    --node-init-data-path=/mnt/datadisk/data \
+    --node-init-index-path=/mnt/datadisk/index \
     --user=$adminUsername \
     --pass=$adminPassword`
   echo node-init output \'$output\'
